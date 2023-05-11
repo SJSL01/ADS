@@ -19,8 +19,8 @@ function App() {
       },
       data: {
         "user": {
-          "email": "testdata@example.com",
-          "first_name": "Bob",
+          "email": "dynamic@example.com",
+          "first_name": "bob111",
           "last_name": "User"
         }
       }
