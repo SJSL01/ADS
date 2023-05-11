@@ -12,7 +12,7 @@ function App() {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://api.skilljar.com/v1/domains/snaplogic-sandbox.skilljar.com/users',
+      url: '/v1/domains/snaplogic-sandbox.skilljar.com/users',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Basic ${window.btoa(import.meta.env.VITE_KEY)}`
