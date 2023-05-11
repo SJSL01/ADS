@@ -29,17 +29,9 @@ function App() {
     axios.request(config)
       .then((response) => {
         console.log(JSON.stringify(response.data.user.id));
-
-        const userId = response.data.user.id
-
-        let data = JSON.stringify({
-
-          "user": {
-            "id": userId
-          }
-        }
-        );
-      })
+      }) .catch((error) => {
+          console.log(error);
+        });
   }, [])
 
 
