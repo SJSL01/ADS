@@ -1,7 +1,46 @@
+import { useEffect } from "react"
 import "./style.css"
+import axios from "axios"
 
 function App() {
 
+
+  useEffect(() => {
+
+  
+
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'https://api.skilljar.com/v1/domains/snaplogic-sandbox.skilljar.com/users',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Basic ${window.btoa(import.meta.env.VITE_KEY)}`
+      },
+      data: {
+        "user": {
+          "email": "testdata@example.com",
+          "first_name": "Bob",
+          "last_name": "User"
+        }
+      }
+    };
+
+    axios.request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data.user.id));
+
+        const userId = response.data.user.id
+
+        let data = JSON.stringify({
+
+          "user": {
+            "id": userId
+          }
+        }
+        );
+      })
+  }, [])
 
 
 
@@ -11,7 +50,7 @@ function App() {
 
 
       <header>
-        
+
         <nav>
           <h1>DUMMY</h1>
           <ul>
